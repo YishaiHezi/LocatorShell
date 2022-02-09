@@ -32,10 +32,6 @@ class Names(db.Model):
         return f"{self.name} -> {self.mac}"
 
 
-import random
-def ra():
-    return random.randint(1, 10)
-
 @application.route('/', methods=['GET', 'POST'])
 def index():
     return 'Hello! This is the locator app.'
