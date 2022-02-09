@@ -18,7 +18,7 @@ In order to use it - you need to download it, then navigate to the directory whe
 
 >>> python server.py
 
-4. Now, any client on any computer on the same LAN can open a cmd and run:
+4. Now, any client on any computer on the same LAN of the server can open a cmd and run:
 
 >>> python client.py
 
