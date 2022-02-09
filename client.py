@@ -9,7 +9,7 @@ class ClientLocator:
     def __init__(self):
         self.MAC = None
 
-        response = requests.get('http://192.168.14.39/')
+        response = requests.get('http://127.0.0.1:5000/')
         print(response.text)
         print('')
 
@@ -31,8 +31,7 @@ class ClientLocator:
                 time.sleep(20)
                 self.MAC = get_default_mac.get_router_mac()
                 mac_and_name = {'mac': self.MAC, 'name': self.USER}
-                res = requests.post('http://192.168.14.39/macs',
-                                    json=mac_and_name)
+                res = requests.post('http://127.0.0.1:5000/macs', json=mac_and_name)
 
                 if res.text == 'I need your location':
                     self.threads_mutex.acquire()
@@ -43,8 +42,7 @@ class ClientLocator:
         print(f'Your current location is unknown.')
         current_location = input(f'Please enter your current location: ')
         mac_and_location = {'mac': self.MAC, 'location': current_location}
-        res = requests.post('http://192.168.14.39/locations',
-                            json=mac_and_location)
+        res = requests.post('http://127.0.0.1:5000/locations', json=mac_and_location)
         print(res.text)
 
 
@@ -62,7 +60,7 @@ class ClientLocator:
 
         else:
             name_dict = {'name': name}
-            response = requests.get('http://192.168.14.39/names', json=name_dict)
+            response = requests.get('http://127.0.0.1:5000/names', json=name_dict)
             location = response.text
 
             if location != 'Not found':
