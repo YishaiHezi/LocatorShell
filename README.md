@@ -2,8 +2,8 @@
 
 This is a project that allows users to share their location with other users in real time.
 
-In order to use this, you need to download it, then you need to navigate to the directory, and:
-(this instructions apply only to windows)
+In order to use it - you need to download it, then navigate to the directory where you downloaded it and:
+(applies only to windows)
 
 1. activate a python venv:
 
